@@ -57,5 +57,5 @@
     "url": "git+https://github.com/zouwei/wechatpay-sdk.git"
   },
   "scripts": {},
-  "version": "1.0.0"
+  "version": "1.0.1"
 }
