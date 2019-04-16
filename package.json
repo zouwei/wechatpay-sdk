@@ -1,15 +1,30 @@
 {
-  "name": "wechatpay-sdk",
-  "version": "1.0.0",
-  "main": "./dist/index.js",
-  "scripts": {
-    "build": "tsc",
-    "build:prod": "tsc -p tsconfig.prod.json",
-    "clean": "rimraf dist",
-    "docs": "typedoc --mode file --out docs src",
-    "lint": "tslint -p tsconfig.json --fix",
-    "prepublish": "npm run clean && npm run build:prod",
-    "test": "jest"
+  "_from": "wechatpay-nodesdk",
+  "_id": "wechatpay-nodesdk@1.0.1",
+  "_inBundle": false,
+  "_integrity": "sha512-KQGZauxD3qnuRGM0KfvhjVdGLsGVz0s8Zc+Jkpm05yrukSn5QcNciVgmmQ7CS5FKqE7Ji9132atTtml9bgyt9Q==",
+  "_location": "/wechatpay-nodesdk",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "wechatpay-nodesdk",
+    "name": "wechatpay-nodesdk",
+    "escapedName": "wechatpay-nodesdk",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/wechatpay-nodesdk/-/wechatpay-nodesdk-1.0.0.tgz",
+  "_shasum": "105cd4ca57d23a0d762c6521c65791e6d1641f5b",
+  "_spec": "wechatpay-nodesdk",
+  "_where": "E:\\workspace\\anyi\\popay",
+  "author": {
+    "name": "胡邹"
   },
   "bugs": {
     "url": "https://github.com/zouwei/wechatpay-sdk/issues"
@@ -20,10 +35,6 @@
     "raw-body": "^2.3.3",
     "request": "^2.88.0",
     "xml2js": "^0.4.19"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zouwei/wechatpay-sdk.git"
   },
   "deprecated": false,
   "description": "微信支付 SDK，支持刷卡支付、公众号支付、扫码支付、APP支付、H5支付，以及优惠券，红包，企业付款，微信代扣",
@@ -37,10 +48,14 @@
     "typedoc": "^0.14.2",
     "typescript": "^3.0.3"
   },
-  "author": "胡邹",
+  "homepage": "https://github.com/zouwei/wechatpay-sdk#readme",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/zouwei/wechatpay-sdk/issues"
+  "main": "./dist/index.js",
+  "name": "wechatpay-nodesdk",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zouwei/wechatpay-sdk.git"
   },
-  "homepage": "https://github.com/zouwei/wechatpay-sdk#readme"
+  "scripts": {},
+  "version": "1.0.0"
 }

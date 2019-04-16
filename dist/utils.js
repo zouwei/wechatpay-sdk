@@ -59,7 +59,7 @@ exports.fromXML = fromXML;
  * 签名
  */
 function sign(signType, data, secret) {
-    // console.log('签名入参>>>>>>>>>>', data)
+    console.log('签名入参>>>>>>>>>>', data)
     const combined = Object.keys(data)
         .filter(key => key !== "sign" &&
             data.hasOwnProperty(key) &&
@@ -72,7 +72,7 @@ function sign(signType, data, secret) {
         "&key=" +
         secret;
 
-    // console.log("签名结果11>>", signType, combined)
+    console.log("签名结果11>>", signType, combined)
     if (signType === "MD5" /* MD5 */) {
         return md5(combined).toUpperCase();
     }

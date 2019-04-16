@@ -84,8 +84,10 @@ class EntrustBase extends Base_1.default {
         console.log("入参>>>>", options)// "https://api.mch.weixin.qq.com" + 
         return __awaiter(this, void 0, void 0, function* () {
             const url = this.completeURL(QUERY_CONTRACT_BASE);
-            console.log("api地址>>>", url)
+
             let extra = yield this.createFetchOptions(url);
+            // 删除 
+            delete extra.nonce_str;     // 没有这个参数
             console.log("extra>>>", options, extra)
             extra.consts = { version: "1.0" };
 
@@ -109,7 +111,8 @@ class EntrustBase extends Base_1.default {
      */
     papPayApply(options) {
         return __awaiter(this, void 0, void 0, function* () {
-            const extra = yield this.createFetchOptions(PAP_PAY_APPLY_BASE);
+            const url = this.completeURL(PAP_PAY_APPLY_BASE);
+            const extra = yield this.createFetchOptions(url);
             extra.consts = { trade_type: "PAP" };
             return fetch_1.fetch(options, extra);
         });
@@ -133,7 +136,9 @@ class EntrustBase extends Base_1.default {
      */
     deleteContract(options) {
         return __awaiter(this, void 0, void 0, function* () {
-            const extra = yield this.createFetchOptions(DELETE_CONTRACT_BASE);
+            const url = this.completeURL(DELETE_CONTRACT_BASE);
+            const extra = yield this.createFetchOptions(url);
+            delete extra.nonce_str;     // 没有这个参数
             extra.consts = { version: "1.0" };
             return fetch_1.fetch(options, extra);
         });
@@ -254,7 +259,8 @@ class EntrustBase extends Base_1.default {
      */
     papOrderQuery(options) {
         return __awaiter(this, void 0, void 0, function* () {
-            const extra = yield this.createFetchOptions(PAP_ORDER_QUERY_BASE);
+            const url = this.completeURL(PAP_ORDER_QUERY_BASE);
+            const extra = yield this.createFetchOptions(url);
             return fetch_1.fetch(options, extra);
         });
     }
@@ -266,6 +272,8 @@ class EntrustBase extends Base_1.default {
             return fetch_1.fetch(options, extra);
         });
     }
+
+    // 基础方法
     entrustBase(options) {
         return __awaiter(this, void 0, void 0, function* () {
             const data = Object.assign({

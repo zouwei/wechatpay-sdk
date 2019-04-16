@@ -65,7 +65,7 @@ class Base {
     createFetchOptions(url, usePfx = false) {
         return __awaiter(this, void 0, void 0, function* () {
             const key = this.getKey();
-            const ret = {
+            let ret = {
                 appid: this.appId,
                 mch_id: this.mchId,
                 key,
