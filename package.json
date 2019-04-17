@@ -1,14 +1,9 @@
 {
   "name": "wechatpay-nodesdk",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "main": "./dist/index.js",
-  "scripts": { 
-  },
-  "bugs": {
-    "url": "https://github.com/zouwei/wechatpay-sdk/issues"
-  },
+  "scripts": {},
   "dependencies": {
-    "@types/node": "^11.13.0",
     "raw-body": "^2.3.3",
     "request": "^2.88.0",
     "xml2js": "^0.4.19"
@@ -20,6 +15,7 @@
   "deprecated": false,
   "description": "微信支付 SDK，支持刷卡支付、公众号支付、扫码支付、APP支付、H5支付，以及优惠券，红包，企业付款，微信代扣",
   "devDependencies": {
+    "@types/node": "^11.13.0",
     "@types/jest": "^24.0.11",
     "@types/request": "^2.47.1",
     "@types/xml2js": "^0.4.3",
@@ -35,4 +31,4 @@
     "url": "https://github.com/zouwei/wechatpay-sdk/issues"
   },
   "homepage": "https://github.com/zouwei/wechatpay-sdk#readme"
-} 
+}
