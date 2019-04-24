@@ -286,7 +286,7 @@ class EntrustBase extends Base_1.default {
             data.version = "1.0";
             const signData = utils_1.sign(signType || "MD5", data, key);         // HMAC-SHA256
             data.sign = signData;
-
+            
             return data;
         });
     }
