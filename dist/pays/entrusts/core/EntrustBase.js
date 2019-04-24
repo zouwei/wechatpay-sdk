@@ -274,7 +274,7 @@ class EntrustBase extends Base_1.default {
     }
 
     // 基础方法
-    entrustBase(options) {
+    entrustBase(options, signType) {
         return __awaiter(this, void 0, void 0, function* () {
             const data = Object.assign({
                 appid: this.appId,
@@ -284,7 +284,7 @@ class EntrustBase extends Base_1.default {
             // 必须提取到前面
             data.timestamp = Math.ceil(Date.now() / 1000);
             data.version = "1.0";
-            const signData = utils_1.sign("MD5" /* "HMAC-SHA256" */, data, key);
+            const signData = utils_1.sign(signType || "MD5", data, key);         // HMAC-SHA256
             data.sign = signData;
 
             return data;

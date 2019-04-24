@@ -68,7 +68,7 @@ class WapEntrust extends EntrustBase_1.default {
      */
     entrust(options) {
         return __awaiter(this, void 0, void 0, function* () {
-            const data = yield this.entrustBase(options);
+            const data = yield this.entrustBase(options, "HMAC-SHA256");
             return ENTRUST_BASE + "?" + qs.stringify(data);
         });
     }
