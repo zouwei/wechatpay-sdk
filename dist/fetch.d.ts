@@ -4,6 +4,10 @@ import * as types from "./types";
  */
 export declare function fetch<U, S extends types.BaseReturn, F extends types.BaseReturn>(data: U, extra: types.FetchOptions): Promise<S | F>;
 /**
+ * 远程调用
+ */
+export declare function getFetch<U, S extends types.BaseReturn, F extends types.BaseReturn>(url: U, extra: types.FetchOptions): Promise<S | F>;
+/**
  * 远程下载
  */
 export declare function download<U, F extends types.BaseReturn>(data: U, extra: types.FetchOptions): Promise<string | F>;

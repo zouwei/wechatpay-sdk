@@ -31,6 +31,36 @@ function fetch(data, extra) {
     });
 }
 exports.fetch = fetch;
+
+exports.getFetch = (url, extra) => {
+    const options = {
+        method: "GET",
+        uri: url,
+        qs: extra || {}
+    }
+    return new Promise((resolve, reject) => {
+        console.log("options>>>>", options)
+        request(options, (err, _, rawBody) => {
+            if (err) {
+                return reject(new errors_1.RequestError(err));
+            }
+            utils_1.fromXML(rawBody)
+                .then(resBody => {
+                    console.log("结果。。。。", resBody)
+                    if (resBody.return_code === "FAIL") {
+                        return reject(new errors_1.CommunicationError(resBody.return_code, resBody.return_msg));
+                    }
+
+                    resolve(resBody);
+                })
+                .catch(parseErr => {
+                    reject(new errors_1.RequestError("解析失败: " + rawBody));
+                });
+        });
+    });
+}
+
+
 /**
  * 远程下载
  */

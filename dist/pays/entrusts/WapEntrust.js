@@ -8,8 +8,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const qs = require("querystring");
+// const qs = require("querystring");
 const EntrustBase_1 = require("./core/EntrustBase");
+const fetch_1 = require("../../fetch");
 const ENTRUST_BASE = "https://api.mch.weixin.qq.com/papay/h5entrustweb";
 /**
  * H5签约
@@ -69,7 +70,9 @@ class WapEntrust extends EntrustBase_1.default {
     entrust(options) {
         return __awaiter(this, void 0, void 0, function* () {
             const data = yield this.entrustBase(options, "HMAC-SHA256");
-            return ENTRUST_BASE + "?" + qs.stringify(data);
+            // console.log("日志", data)
+            // 二次请求，需要拿到H5去签约的地址  + "?" + qs.stringify(data)
+            return fetch_1.getFetch(ENTRUST_BASE, data);
         });
     }
 }
